@@ -66,7 +66,7 @@ void postOrder(Node *t){
 	printf("%d ",t->data);
 }
 
-int main(void)  
+int main()  
 {  
   	int n;
 	while(scanf("%d",&n)!=EOF) {
