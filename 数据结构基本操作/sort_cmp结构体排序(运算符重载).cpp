@@ -21,43 +21,18 @@
 #include<stdlib.h>
 #include<string.h>
 #include<algorithm>
-using namespace std; 
+using namespace std;
 struct E{
-    char name[101];
+    char name[100];
     int age;
     int score;
-}buf[1000];
-bool cmp(E a,E b){ 
-    if(a.score!=b.score) return a.score<b.score;
-    //  按成绩排 ，升序
-    int tmp = strcmp(a.name,b.name);
+    bool operator < (const E &b) const{
+    if(score!=b.score) return score < b.score;
+    int tmp=strcmp(name,b.name);
     if(tmp!=0) return tmp<0;
-    //  成绩相同，按名字字母序排，升序，a<b,tmp<0,return true,即字母徐a<b则返回true
-    else return a.age<b.age;
-    //  字相同，按年龄排，升序 
-}
-
-/*
-bool cmp(int a,int b){
-    return a>b;
-}
-等价于,降序 
-bool cmp(int a,int b){
-    if(a>b) return true;
-    else return false;
-}
-
-bool cmp(int a,int b){
-    return true;
-}
-a[5]={2,1,3,5,4}
-排后4,5,3,1,2 
-
-bool cmp(int a,int b){
-    return false;
-}
-排后2,1,3,5,4
-*/
+    else return age<b.age;
+    }
+}buf[1000];
 
 int main(){
     int n;
@@ -66,13 +41,13 @@ int main(){
         for(int i=0;i<n;i++)
         {
             scanf("%s%d%d",buf[i].name,&buf[i].age,&buf[i].score);
-        }                                                                                                                   
-        sort(buf,buf+n,cmp);
+        }
+        sort(buf,buf+n);
         for(int i=0;i<n;i++)
         {
             printf("%s %d %d\n",buf[i].name,buf[i].age,buf[i].score);
         }
     }
-    system("pause");
     return 0;
+    system("pause");
 } 
