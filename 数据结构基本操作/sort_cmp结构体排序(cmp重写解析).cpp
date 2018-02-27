@@ -8,14 +8,14 @@ struct E{
     int age;
     int score;
 }buf[1000];
-bool cmp(E a,E b){
-//  按成绩排 ，升序 
+bool cmp(E a,E b){ 
     if(a.score!=b.score) return a.score<b.score;
-//  成绩相同，按名字字母序排，升序，a<b,tmp<0,return true,即字母徐a<b则返回true
+    //  按成绩排 ，升序
     int tmp = strcmp(a.name,b.name);
     if(tmp!=0) return tmp<0;
-//  字相同，按年龄排，升序 
+    //  成绩相同，按名字字母序排，升序，a<b,tmp<0,return true,即字母徐a<b则返回true
     else return a.age<b.age;
+    //  字相同，按年龄排，升序 
 }
 
 /*
@@ -28,17 +28,16 @@ bool cmp(int a,int b){
     else return false;
 }
 
-a[5]={2,1,3,5,4}
-排后4,5,3,1,2 
 bool cmp(int a,int b){
     return true;
 }
+a[5]={2,1,3,5,4}
+排后4,5,3,1,2 
 
-排后2,1,3,5,4
 bool cmp(int a,int b){
     return false;
 }
-
+排后2,1,3,5,4
 */
 
 int main(){
