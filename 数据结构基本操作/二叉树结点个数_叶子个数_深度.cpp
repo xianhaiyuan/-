@@ -31,12 +31,12 @@ Node *insert(Node *t,int x){
 	return t;
 }
 
-//结点个数 
+//缁撶偣涓暟
 int num_of_nodes(Node *t){
 	if(t == NULL) return 0;
 	return 1+num_of_nodes(t->lchild)+num_of_nodes(t->rchild);
 }
-//叶子个数 
+//鍙跺瓙涓暟
 int num_of_leaf(Node *t){
 	if(t==NULL) return 0;
 	if(t->lchild == NULL && t->rchild == NULL) return 1;
