@@ -17,7 +17,14 @@
 #include<stdlib.h>
 #include<queue>
 using namespace std;
-priority_queue<int, vector<int>, greater<int> > Q;  //建立一个小顶堆 
+priority_queue<int, vector<int>, greater<int> > Q;  //建立一个小顶堆
+/*
+#include<queue>
+priority_queue<int> Q;  大顶堆
+queue<int> Q;  队
+#include<stack>
+stack<int> in;  栈
+*/
 int main(){
     int n;
     while(scanf("%d",&n)!=EOF)
@@ -33,7 +40,7 @@ int main(){
         while(Q.size()>1)  //当堆中的元素大于1个 
         {
             int a = Q.top();
-            Q.pop();
+            Q.pop();  //注意pop()没有返回值
             int b=Q.top();
             Q.pop();
             ans+=a+b;
