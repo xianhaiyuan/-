@@ -58,7 +58,7 @@ void postOrder(Node *T){
 	str[(*size)++]=T->c+'0';  //将结点中的字符放入正在保存的字符串中 
 }
 
-//后序遍历 
+//中序遍历 
 void inOrder(Node *T){
 	if(T->lchild != NULL) inOrder(T->lchild);
 	str[(*size)++]=T->c+'0';  //将结点中的字符放入正在保存的字符串中 
